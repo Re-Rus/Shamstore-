@@ -6,11 +6,11 @@ import Products from "./pages/products";
 import ProductDetails from "./pages/product-details";
 import Checkout from "./pages/checkout";
 import Cart from "./pages/cart";
+import Dashboard from "./pages/dashboard";
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <main className="flex-1 ">
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -19,6 +19,7 @@ export default function App() {
               <Route path="/ProductsDetails" element={<ProductDetails />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path="/Dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
         </main>
