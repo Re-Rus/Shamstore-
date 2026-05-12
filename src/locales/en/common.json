@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "dashboard": "Dashboard"
+  },
+  "logo":{
+    "shamstore": "Sham Store"
+  },
+  "search":{
+    "search":"Search products..."
+  }
+
+}
