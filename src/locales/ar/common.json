@@ -6,11 +6,22 @@
     "cart": "السلة",
     "dashboard": "لوحة التحكم"
   },
-  "logo":{
+
+  "logo": {
     "shamstore": "شام ستور"
   },
-  "search":{
-    "search":"البحث في المنتجات..."
-  }
 
+  "search": {
+    "search": "البحث في المنتجات..."
+  },
+
+  "badges": {
+    "discount": "خصم",
+    "new": "جديد",
+    "instock": "متوفر"
+  },
+
+  "products": {
+    "price": "السعر:"
+  }
 }
