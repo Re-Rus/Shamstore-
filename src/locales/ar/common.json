@@ -22,6 +22,13 @@
   },
 
   "products": {
-    "price": "السعر:"
+    "price": "السعر:",
+    "addToCart": "أضف إلى السلة"
+  },
+
+  "categories": {
+    "laptops": "لابتوبات",
+    "accessories": "إكسسوارات",
+    "parts": "قطع كمبيوتر"
   }
 }

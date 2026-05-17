@@ -1,4 +1,3 @@
-import { FaStar, FaRegStar } from "react-icons/fa";
 
 /*
 ========================================
@@ -7,27 +6,33 @@ Rating Component
 Displays static product rating using stars
 ========================================
 */
-
-interface RatingProps {
+type RatingProps = {
   rating: number;
-}
+};
 
-export default function Rating({ rating }: RatingProps) {
+function Rating({ rating }: RatingProps) {
   return (
-    <div className="flex items-center gap-1">
-      {[1, 2, 3, 4, 5].map((star) =>
-        star <= rating ? (
-          <FaStar
+    <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <span
             key={star}
-            className="text-accent text-sm"
-          />
-        ) : (
-          <FaRegStar
-            key={star}
-            className="text-gray-300 text-sm"
-          />
-        )
-      )}
+            className={
+              star <= rating
+                ? "text-accent text-lg"
+                : "text-gray-300 text-lg"
+            }
+          >
+            ★
+          </span>
+        ))}
+      </div>
+
+      <span className="text-sm text-gray-500">
+        ({rating}.0)
+      </span>
     </div>
   );
 }
+
+export default Rating;
