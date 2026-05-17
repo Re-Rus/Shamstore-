@@ -1,6 +1,6 @@
 @tailwind base;   
 @tailwind components; 
-@tailwind utilities;  
+@tailwind utilities;   
 
 :root {
   /* Hero Section Gradient: Dark, sophisticated tones for the homepage entrance */
@@ -12,14 +12,14 @@
   --qasioun-gold: #C6A13A;       /* Inspired by the sunset over Mount Qasioun */
   --ebla-bronze: #8C6239;        /* Inspired by ancient Syrian artifacts and soil */
   --palmyra-sand: #D8C3A5;       /* Inspired by the ruins and desert of Palmyra */
-  --orontes-green: #2F5D50;      /* Inspired by the lush greenery of the Orontes (Assi) River */
-  --mediterranean-blue: #1F3C88; /* Inspired by the Syrian coast (Lattakia/Tartus) */
+  --orontes-green: #1B5E20;      /* تم تحديثه لأخضر صريح وواضح جداً للعين لضمان ظهوره */
+  --mediterranean-blue: #1F3C88; /* Inspired by the Syrian coast*/
   --basalt-black: #1C1C1C;       /* Inspired by the volcanic basalt stones of the Hauran region */
 
   /* UI Semantic Mapping: Assigning palette colors to functional interface variables */
   --background: #FAFAF8;               /* Global canvas color (Warm White) */
   --foreground: var(--basalt-black);    /* Global text color for maximum legibility */
-  --primary: var(--mediterranean-blue); /* Main brand color for key actions */
+  --primary: var(--orontes-green);     /* كود اللون الأساسي يقرأ الأخضر مباشرة */
   --secondary: var(--palmyra-sand);     /* Neutral color for secondary UI sections */
   --accent: var(--qasioun-gold);        /* Highlight color for CTA buttons and badges */
   --border: rgba(28, 28, 28, 0.1);     /* Subtle border color for cards and dividers */
