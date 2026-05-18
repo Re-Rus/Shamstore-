@@ -23,12 +23,28 @@
 
   "products": {
     "price": "السعر:",
-    "addToCart": "أضف إلى السلة"
+    "addToCart": "أضف إلى السلة",
+    "ourProducts": "منتجاتنا",
+    "Browse our collection of premium computing products": "تصفح مجموعتنا من منتجات الحوسبة الاحترافية",
+    "showingProducts": "عرض 4 منتجات",
+    "sortBy": "ترتيب حسب",
+    "featured": "مميزة",
+    "highToLow": "السعر: من الأعلى للأقل",
+    "lowToHigh": "السعر: من الأقل للأعلى",
+    "rating": "التقييم",
+    "newest": "الأحدث"
   },
 
   "categories": {
+    "category": "الفئات",
+    "all": "الكل",
     "laptops": "لابتوبات",
     "accessories": "إكسسوارات",
     "parts": "قطع كمبيوتر"
+  },
+
+  "filters": {
+    "priceRange": "نطاق السعر",
+    "resetFilters": "إعادة ضبط الفلاتر"
   }
 }

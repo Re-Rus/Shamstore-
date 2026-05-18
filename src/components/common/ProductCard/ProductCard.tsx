@@ -1,19 +1,6 @@
-
-/*
-========================================
-ProductCard Component
-----------------------------------------
-Displays:
-- Product image
-- Product title
-- Product price
-- Product rating
-========================================
-*/
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
 
-import Button from "../../ui/Button/Button";
 import Badge from "../../ui/Badge/Badge";
 
 type ProductCardProps = {
@@ -65,7 +52,7 @@ function ProductCard({
         h-full
       "
     >
-      {/* IMAGE SECTION */}
+      {/* IMAGE */}
 
       <div className="relative overflow-hidden">
         {/* BADGE */}
@@ -80,19 +67,30 @@ function ProductCard({
         {/* WISHLIST */}
 
         <div className="absolute top-4 left-4 z-10">
-          <Button
-            variant="ghost"
-            icon="❤"
+          <button
             className="
-              bg-white/80
+              w-10
+              h-10
+              rounded-full
+              bg-white/90
               backdrop-blur-sm
               shadow-md
+              flex
+              items-center
+              justify-center
+              text-accent
+              transition-all
+              duration-300
               hover:scale-110
+              hover:border
+              hover:border-accent
             "
-          />
+          >
+            ❤
+          </button>
         </div>
 
-        {/* PRODUCT IMAGE */}
+        {/* IMAGE */}
 
         <img
           src={image}
@@ -119,13 +117,9 @@ function ProductCard({
           gap-4
         "
       >
-        {/* CATEGORY */}
-
         <p className="text-sm text-secondary font-medium">
           {category}
         </p>
-
-        {/* TITLE */}
 
         <h2
           className="
@@ -138,8 +132,6 @@ function ProductCard({
         >
           {title}
         </h2>
-
-        {/* RATING */}
 
         <Rating rating={rating} />
 
@@ -166,11 +158,27 @@ function ProductCard({
             </p>
           </div>
 
-          {/* BUTTON */}
+          {/* CART ICON */}
 
-          <Button className="whitespace-nowrap">
-            {t("products.addToCart")}
-          </Button>
+          <button
+            className="
+              w-12
+              h-12
+              rounded-2xl
+              bg-white
+              border
+              border-gray-200
+              text-accent
+              text-xl
+              shadow-sm
+              transition-all
+              duration-300
+              hover:border-accent
+              hover:scale-105
+            "
+          >
+            🛒
+          </button>
         </div>
       </div>
     </div>
