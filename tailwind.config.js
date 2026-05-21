@@ -15,7 +15,7 @@ export default {
         
         // Hero section gradient colors
         'hero-start': "var(--hero-from)",    // Starting color for the homepage hero gradient
-        'hero-mid': "var(--hero-via)",       // Intermediate transition color for the gradient
+        'hero-mid': "var(--hero-from)",       // Intermediate transition color for the gradient
         'hero-end': "var(--hero-to)",        // Final ending color for the hero section gradient
         
         // UI structural colors

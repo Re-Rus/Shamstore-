@@ -8,7 +8,7 @@ export default function Header() {
 
   const { t } = useTranslation();
   return (
-    <header className="bg-white/10 shadow-md px-4 md:px-6 py-3 ">
+    <header className="fixed w-full bg-white bg-opacity-95 shadow-md px-4 md:px-6 py-3 z-20 ">
       <div className="grid grid-cols-[auto_1fr_auto] items-center">
         {/*  Logo */}
         <div className="flex items-center gap-2">

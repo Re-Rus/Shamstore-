@@ -5,7 +5,7 @@ function HeroSection() {
 
   return (
     <section
-       className="relative overflow-hidden w-full h-64 bg-gradient-to-r from-hero-start via-hero-mid to-hero-end"
+       className="relative overflow-hidden w-full h-64 bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid to-100%"
     >
       {/* OVERLAY */}
 
@@ -35,7 +35,7 @@ function HeroSection() {
             text-4xl
             lg:text-5xl
             font-black
-            text-white
+            text-secondary
           "
         >
           {t("products.ourProducts")}

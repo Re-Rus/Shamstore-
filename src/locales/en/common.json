@@ -7,10 +7,97 @@
     "dashboard": "Dashboard"
   },
   "logo":{
-    "shamstore": "Sham Store"
+    "shamstore": "Damasco store"
   },
   "search":{
-    "search":"Search products..."
-  }
+    "search": "Search products..."
+  },
+  "hero":{
+    "pr": "Premium Quality Since 2004",
+    "title": "Professional Devices for a Limitless World",
+    "subtitle": "Discover premium laptops and cutting-edge accessories that blend modern technology with timeless craftsmanship",
+    "cta": "Explore More"
+  },
+  "SaleBanner":{
+    "title": "Summer Sale - Up to 30% Off",
+    "subtitle": "Limited time offer on selected laptops and accessories",
+    "button": "Shop Now"
+  },
+  "CatS":{
+     "title":"Browse by Category",
+     "subtitle":"Find exactly what you need"
+  },
+  "Computer Parts":{
+  "Computer Parts": "Computer parts",
+  "title":"High-performance components for your design",
+  "linkText": "Browse parts"
+},
+"Accessories":{
+  "Accessories": "Accessories",
+  "title":"Premium accessories and peripherals",
+  "linkText": "Browse Accessories"
+},
+"Laptops":{
+  "Laptops": "Laptops",
+  "title": "The latest models from the best brands",
+  "linkText": "Browse laptops"
+},
+"Featured Products":{
+"Featured Products": "Featured Products",
+"title": "Carefully selected items just for you"
+},
+"Info":{
+  "Info": "Why choose Damasco store?",
+  "title": "Your satisfaction is our priority"
+},
+"features": {
+    "authentic": {
+      "title": "Authentic Products",
+      "desc": "100% genuine products with manufacturer warranty"
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "desc": "Free shipping on orders over $500"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "desc": "Round-the-clock customer assistance"
+    },
+    "prices": {
+      "title": "Best Prices",
+      "desc": "Competitive pricing with regular deals"
+    }
+  },
+"badges": {
+    "discount": "discount",
+    "new": "new",
+    "instock":  "instock"
+  },
 
+  "products": {
+    "price": "price",
+    "addToCart": "add To Cart",
+    "ourProducts": "Our Products",
+    "Browse our collection of premium computing products": "Browse our collection of premium computing products",
+    "showingProducts": "showing Products",
+    "sortBy": "Sort By",
+    "featured": "featured",
+    "highToLow": "Price: From highest to lowest",
+    "lowToHigh": "Price: From lowest to highest",
+    "rating": "التقييم",
+    "newest": "الأحدث"
+  },
+
+  "categories": {
+    "category":  "Category",
+    "all": "All",
+    "laptops": "Laptops",
+    "accessories": "Accessories",
+    "parts": "computer parts"
+  },
+
+  "filters": {
+    "priceRange": "Price Range",
+    "resetFilters": "reset Filters"
+  }
 }

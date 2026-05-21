@@ -1,6 +1,5 @@
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
-
 import Badge from "../../ui/Badge/Badge";
 
 type ProductCardProps = {
@@ -9,6 +8,9 @@ type ProductCardProps = {
   price: number;
   rating: number;
   category?: string;
+  className?: string;   
+  imageClassName?: string; 
+  animationClassName?: string;
 };
 
 function ProductCard({
@@ -17,6 +19,10 @@ function ProductCard({
   price,
   rating,
   category,
+  className = "",      
+  imageClassName = "", 
+ animationClassName = "transition-all duration-500 hover:-translate-y-2",
+  
 }: ProductCardProps) {
   const { t } = useTranslation();
 
@@ -34,7 +40,7 @@ function ProductCard({
 
   return (
     <div
-      className="
+      className={`
         bg-white
         rounded-3xl
         overflow-hidden
@@ -42,21 +48,20 @@ function ProductCard({
         border-transparent
         shadow-md
         transition-all
-        duration-500
-        hover:-translate-y-2
         hover:shadow-2xl
         hover:border-accent
+        ${animationClassName}
+         hover:shadow-2xl",
         group
         flex
         flex-col
         h-full
-      "
+        ${className} 
+      `}
     >
-      {/* IMAGE */}
-
+      {/* IMAGE CONTAINER */}
       <div className="relative overflow-hidden">
         {/* BADGE */}
-
         <div className="absolute top-4 right-4 z-10">
           <Badge
             labelKey="badges.new"
@@ -65,7 +70,6 @@ function ProductCard({
         </div>
 
         {/* WISHLIST */}
-
         <div className="absolute top-4 left-4 z-10">
           <button
             className="
@@ -91,23 +95,21 @@ function ProductCard({
         </div>
 
         {/* IMAGE */}
-
         <img
           src={image}
           alt={title}
-          className="
+          className={`
             w-full
-            h-64
             object-cover
             transition-transform
             duration-500
             group-hover:scale-110
-          "
+            ${imageClassName ? imageClassName : "h-64"}
+          `}
         />
       </div>
 
       {/* CONTENT */}
-
       <div
         className="
           p-5
@@ -136,7 +138,6 @@ function ProductCard({
         <Rating rating={rating} />
 
         {/* FOOTER */}
-
         <div
           className="
             mt-auto
@@ -147,7 +148,6 @@ function ProductCard({
           "
         >
           {/* PRICE */}
-
           <div>
             <p className="text-sm text-gray-500">
               {t("products.price")}
@@ -159,7 +159,6 @@ function ProductCard({
           </div>
 
           {/* CART ICON */}
-
           <button
             className="
               w-12

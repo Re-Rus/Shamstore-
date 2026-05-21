@@ -24,7 +24,7 @@ export default function Button({
 
   const variantStyles = {
     solid:
-      "bg-primary text-white hover:bg-primary/90 active:bg-primary/80 shadow-md",
+      "bg-accent text-white hover:bg-accent/90 active:bg-accent/80 shadow-md",
     outline:
       "border-2 border-secondary text-secondary hover:bg-secondary/10 active:bg-secondary/20",
     ghost: "text-accent hover:bg-accent/10 active:bg-accent/20",
