@@ -1,7 +1,7 @@
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
 import Badge from "../../ui/Badge/Badge";
-
+import {  Crown,ShoppingCart } from 'lucide-react';
 type ProductCardProps = {
   image: string;
   title: string;
@@ -90,7 +90,7 @@ function ProductCard({
               hover:border-accent
             "
           >
-            ❤
+            <Crown size={15} className="text-primary"/> 
           </button>
         </div>
 
@@ -163,6 +163,10 @@ function ProductCard({
             className="
               w-12
               h-12
+              p-0
+              flex
+              items-center
+              justify-center
               rounded-2xl
               bg-white
               border
@@ -173,11 +177,10 @@ function ProductCard({
               transition-all
               duration-300
               hover:border-accent
-              hover:scale-105
-            "
-          >
-            🛒
-          </button>
+              hover:scale-105">
+              <ShoppingCart  size={25} className="text-primary" />
+                    
+             </button>
         </div>
       </div>
     </div>

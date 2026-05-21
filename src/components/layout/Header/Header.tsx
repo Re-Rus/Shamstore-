@@ -1,7 +1,7 @@
 import NavItem from "./NavItem";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { FaShoppingCart } from "react-icons/fa";
+import { ShoppingCart } from 'lucide-react';
 import Input from "../../ui/Input/Input";
 import logo from "../../../assets/logo.png";
 export default function Header() {
@@ -42,21 +42,10 @@ export default function Header() {
            roundedClassName="rounded-full" // لزيادة الـ Radius وجعله دائرياً بالكامل وفخماً
            iconClassName="text-accent hover:text-accent" // لتغيير لون الأيقونة إلى الذهبي مباشرة
            />
-            {/*}
-            <input
-              type="text"
-              placeholder={t("search.search")}
-              className="border rounded-lg pl-4 pr-10 py-2 
-              focus:outline-none focus:ring-2 focus:ring-[#C6A13A] "
-            />
-            <span className="absolute right-3 top-2 text-gray-400"></span>
             {/*  Cart */}
           </div>
-
-
-          {/*  Cart */}
           <NavItem to="/cart" className="text-xl" hideUnderline={true}>
-            <FaShoppingCart size={25} className="text-primary" />
+            <ShoppingCart  size={25} className="text-primary" />
           </NavItem>
           <LanguageSwitcher />
         </div>
