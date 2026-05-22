@@ -139,6 +139,36 @@
     "terms": "Terms & Conditions",
     "address": "Damascus - Syria",
     "rights": "All rights reserved",
-    "madeWith": "Crafted with care for ShamStore"
-  }
+    "madeWith": "Crafted with care for Damasco Store"
+  },
+  "Cart":{
+    "title":"Shopping Cart",
+    "des":"Review your items before checkout"
+  },
+  
+   "log":{
+    "title":"Welcome Back",
+    "def":"Sign in to continue to Damasco Store",
+    "email":"Email Address",
+    "pass":"Password",
+    "forgot":"Forgot password?",
+    "warnn":"Remember me",
+    "sign":"Sign In",
+    "dont":"Don't have an account?",
+    "shoose":"or continue with",
+    "Sign":"Sign up"
+   },
+   
+   "sign":{
+    "title":"Welcome Back",
+    "def":"Sign in to continue to Damasco Store",
+    "email":"Email Address",
+    "pass":"Password",
+    "forgot":"Forgot password?",
+    "warnn":"Remember me",
+    "sign":"Sign In",
+    "dont":"Don't have an account?",
+    "shoose":"or continue with"
+
+   }
 }

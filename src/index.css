@@ -4,26 +4,26 @@
 
 :root {
   /* Hero Section Gradient: Dark, sophisticated tones for the homepage entrance */
-  --hero-from: #0B1E3C;  /* Deep Midnight Blue - Gradient Start */
-  --hero-via: #123C3A;   /* Dark Emerald - Gradient Transition */
-  --hero-to: #035e0a;   /* Forest Green - Gradient End */
+  --hero-from: #0B1E3C;  
+  --hero-via: #123C3A;   
+  --hero-to: #035e0a;   
   
   /* Syrian Identity Palette: Heritage-inspired colors for brand authenticity */
-  --qasioun-gold: #C6A13A;       /* Inspired by the sunset over Mount Qasioun */
-  --ebla-bronze: #8C6239;        /* Inspired by ancient Syrian artifacts and soil */
-  --palmyra-sand: #D8C3A5;       /* Inspired by the ruins and desert of Palmyra */
-  --orontes-green: #1B5E20;      /* تم تحديثه لأخضر صريح وواضح جداً للعين لضمان ظهوره */
-  --mediterranean-blue: #1F3C88; /* Inspired by the Syrian coast*/
-  --basalt-black: #1C1C1C;       /* Inspired by the volcanic basalt stones of the Hauran region */
+  --qasioun-gold: #C6A13A;      
+  --ebla-bronze: #8C6239;        
+  --palmyra-sand: #D8C3A5;       
+  --orontes-green: #1B5E20;    
+  --mediterranean-blue: #1F3C88; 
+  --basalt-black: #1C1C1C;      
 
   /* UI Semantic Mapping: Assigning palette colors to functional interface variables */
-  --background: #FAFAF8;               /* Global canvas color (Warm White) */
-  --foreground: var(--basalt-black);    /* Global text color for maximum legibility */
-  --primary: var(--orontes-green);     /* كود اللون الأساسي يقرأ الأخضر مباشرة */
-  --secondary: var(--palmyra-sand);     /* Neutral color for secondary UI sections */
-  --accent: var(--qasioun-gold);        /* Highlight color for CTA buttons and badges */
-  --border: rgba(28, 28, 28, 0.1);     /* Subtle border color for cards and dividers */
-  --radius: 0.375rem;                  /* Standard border-radius for an architectural, modern feel */
+  --background: #FAFAF8;              
+  --foreground: var(--basalt-black);  
+  --primary: var(--orontes-green);     
+  --secondary: var(--palmyra-sand);     
+  --accent: var(--qasioun-gold);        
+  --border: rgba(28, 28, 28, 0.1);    
+  --radius: 0.375rem;                
 }
 
 @layer base {

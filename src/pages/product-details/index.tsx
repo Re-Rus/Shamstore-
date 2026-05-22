@@ -374,7 +374,7 @@ function ProductDetails() {
                 className="
                 flex-1
                 h-14
-                bg-accent
+                bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid
                 rounded-2xl
                 text-white
                 font-semibold

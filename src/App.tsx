@@ -3,6 +3,8 @@ import { Layout } from "./components/layout/Layout";
 import Home from "./pages/home";
 import Products from "./pages/products";
 import ProductDetails from "./pages/product-details";
+import Login from "./pages/auth/login";
+import Signup from "./pages/auth/Signup";
 import Checkout from "./pages/checkout";
 import Cart from "./pages/cart";
 import Dashboard from "./pages/dashboard";
@@ -18,6 +20,8 @@ export default function App() {
               <Route path="/Products/:id" element={<ProductDetails />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path="/Login" element={<Login />} />
+               <Route path="/Signup" element={<Signup />} />
               <Route path="/Dashboard" element={<Dashboard />} />
             </Route>
           </Routes>

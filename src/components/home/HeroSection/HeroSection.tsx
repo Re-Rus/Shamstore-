@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     // Main section container: Takes full screen height (min-h-screen) with a gradient background
     <section className="relative w-full min-h-screen overflow-hidden 
-      bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid to-100% text-white flex items-center g">
+      bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid to-100% text-white flex items-center ">
 
       {/* Radial gradient overlay on top of the background to add visual depth and center focus */}
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,_transparent_20%,_rgba(0,0,0,0.3)_100%)] pointer-events-none"></div>

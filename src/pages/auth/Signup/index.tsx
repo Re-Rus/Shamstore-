@@ -1,9 +1,8 @@
 import { useState} from 'react';
-import { Link } from 'react-router-dom';
 import logo from "../../../assets/logo.png";
 import { useTranslation } from "react-i18next";
 import { Mail, EyeClosed, Eye,  LockKeyhole  } from 'lucide-react';
-export default function SignInCard() {
+export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const { t } = useTranslation();
   return (
@@ -23,15 +22,15 @@ export default function SignInCard() {
         </div>
        
 
-        <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">{t("log.title")}</h1>
-        <p className="text-sm font-medium text-accent mb-8">{t("log.def")}</p>
+        <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">{t("sign.title")}</h1>
+        <p className="text-sm font-medium text-accent mb-8">{t("sign.def")}</p>
 
 
         <form className="w-[400px] space-y-5" onSubmit={(e) => e.preventDefault()}>
           
         
           <div className="flex flex-col space-y-1.5">
-            <label className="text-sm font-semibold text-[#374151] px-1">{t("log.email")}</label>
+            <label className="text-sm font-semibold text-[#374151] px-1">{t("sign.email")}</label>
             <div className="relative">
               <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-accent">
                   <Mail />
@@ -45,8 +44,9 @@ export default function SignInCard() {
             </div>
           </div>
 
+          {/* حقل كلمة المرور */}
           <div className="flex flex-col space-y-1.5">
-            <label className="text-sm font-semibold text-[#374151] px-1">{t("log.pass")}</label>
+            <label className="text-sm font-semibold text-[#374151] px-1">{t("sign.pass")}</label>
             <div className="relative">
               <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-accent">
                
@@ -72,23 +72,24 @@ export default function SignInCard() {
           </div>
           <div className="flex items-center justify-between text-sm pt-1">
             <label className="flex items-center space-x-2 cursor-pointer select-none">
-              <input type="checkbox" className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-accent accent-accent" />
-              <span className="text-gray-600 font-medium">{t("log.warnn")}</span>
+              <input type="checkbox" className="w-4 h-4 text-primary
+               border-gray-300 rounded focus:ring-accent accent-accent" />
+              <span className="text-gray-600 font-medium">{t("sign.warnn")}</span>
             </label>
-            <a href="#forgot" className="text-accent font-semibold hover:underline">{t("log.forgot")}</a>
+            <a href="#forgot" className="text-accent font-semibold hover:underline">{t("sign.forgot")}</a>
           </div>
           <button 
             type="submit" 
             className="w-full py-3.5 mt-2 bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid 
              text-white font-bold rounded-2xl shadow-lg shadow-blue-900/20
               hover:opacity-95 transition-opacity duration-200">
-            {t("log.sign")}
+            {t("sign.sign")}
           </button>
         </form>
         <div className="w-full flex items-center my-6">
           <div className="flex-1 h-[1px] bg-gray-200"></div>
           <span className="px-3 text-xs font-semibold text-gray-400
-           bg-white uppercase tracking-wider">{t("log.choose")}</span>
+           bg-white uppercase tracking-wider">{t("sign.choose")}</span>
           <div className="flex-1 h-[1px] bg-gray-200"></div>
         </div>
         <div className="w-full grid grid-cols-2 gap-4">
@@ -101,11 +102,6 @@ export default function SignInCard() {
             <span className="text-sm font-bold text-gray-700">Apple</span>
           </button>
         </div>
-        <p className="text-sm font-medium text-gray-500 mt-8">
-          {t("log.dont")}{' '}
-          <Link to="/signup" className="text-accent font-bold hover:underline">{t("log.Sign")}</Link>
-        </p>
-
       </div>
     </div>
 

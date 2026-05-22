@@ -1,4 +1,5 @@
 import NavItem from "./NavItem";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { ShoppingCart } from 'lucide-react';
@@ -23,35 +24,36 @@ export default function Header() {
             </h1>
           </div>
         </div>
+          {/*  Right Section */}
+        <div className="flex items-center justify-end gap-9">
+          {/*  Desktop Search */}
+          <div className="hidden md:block relative ">
+           <Input 
+           placeholderKey={t("search.search")}
+           hasSearchIcon={true} 
+           roundedClassName="rounded-full" 
+           iconClassName="text-accent hover:text-accent" />
+          </div>
 
         {/*  Navigation */}
         <nav className="hidden md:flex justify-center gap-8 text-primary font-medium">
           <NavItem to="/" label={t("nav.home")} />
           <NavItem to="/Products" label={t("nav.products")} />
-          <NavItem to="/Checkout" label={t("nav.checkout")} />
           <NavItem to="/Dashboard" label={t("nav.dashboard")} />
         </nav>
-
-        {/*  Right Section */}
-        <div className="flex items-center justify-end gap-3">
-          {/*  Desktop Search */}
-          <div className="hidden md:block relative">
-           <Input 
-           placeholderKey={t("search.search")}
-           hasSearchIcon={true} 
-           roundedClassName="rounded-full" // لزيادة الـ Radius وجعله دائرياً بالكامل وفخماً
-           iconClassName="text-accent hover:text-accent" // لتغيير لون الأيقونة إلى الذهبي مباشرة
-           />
-            {/*  Cart */}
-          </div>
           <NavItem to="/cart" className="text-xl" hideUnderline={true}>
             <ShoppingCart  size={25} className="text-primary" />
           </NavItem>
+          <Link
+         to="/login"
+          className="px-4 py-2 text-x font-medium 
+           text-white bg-primary 
+             rounded-full hover:bg-accent transition" >
+          Log in
+        </Link>
           <LanguageSwitcher />
         </div>
       </div>
-
-     
     </header>
   );
 }

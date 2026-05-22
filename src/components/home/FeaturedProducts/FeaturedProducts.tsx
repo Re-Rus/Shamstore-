@@ -8,8 +8,7 @@ import ProductCard from '../../common/ProductCard/ProductCard';
 import { Container } from '../../common/Container';
 import { useTranslation } from 'react-i18next';
 
-// --- Static Data Array ---
-// Holds the mock data for the featured products.
+
 const featuredProducts = [
   {
     id: 1,
@@ -66,7 +65,6 @@ function FeaturedProductsSection() {
       <Container className="max-w-6xl">
         
         {/* --- Section Header --- */}
-        {/* Flex layout separates the title on the left and navigation buttons on the right */}
         <div className="flex justify-between items-end mb-8">
           
           {/* Title and Subtitle */}
@@ -80,7 +78,7 @@ function FeaturedProductsSection() {
           </div>
 
           {/* --- Custom Navigation Buttons --- */}
-          {/* These buttons are linked to the Swiper instance using their specific class names */}
+      
           <div className="flex gap-3">
             {/* Previous Slide Button */}
             <button className="swiper-button-prev-custom w-12 h-12 flex items-center justify-center
@@ -99,7 +97,6 @@ function FeaturedProductsSection() {
         </div>
 
         {/* --- Swiper Carousel --- */}
-        {/* Wrapper div to hide overflow and add bottom padding for the pagination dots */}
         <div className="w-full pb-12 overflow-hidden"> 
           
           <Swiper
@@ -118,8 +115,8 @@ function FeaturedProductsSection() {
             
             // Responsive settings: change how many cards are visible based on screen width
             breakpoints={{
-              640: { slidesPerView: 2.5 }, // Tablets
-              1024: { slidesPerView: 4 },  // Desktops
+              640: { slidesPerView: 2.5 }, 
+              1024: { slidesPerView: 4 }, 
             }}
             className="w-full" 
           >
@@ -127,6 +124,7 @@ function FeaturedProductsSection() {
             {featuredProducts.map((product) => (
               <SwiperSlide key={product.id} className="h-auto">
                 <ProductCard 
+                 id={product.id}
                   image={product.image}
                   title={product.title}
                   price={product.price}
@@ -134,7 +132,7 @@ function FeaturedProductsSection() {
                   category={product.category}
                   className="w-50 max-w-sm" 
                   imageClassName="h-20"
-                  animationClassName="" // Overriding the default animations for the slider cards
+                  animationClassName="" 
                 />
               </SwiperSlide>
             ))}
