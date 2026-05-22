@@ -1,30 +1,35 @@
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
 import Badge from "../../ui/Badge/Badge";
-import {  Crown,ShoppingCart } from 'lucide-react';
+import { Crown, ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 type ProductCardProps = {
+  id: number;
   image: string;
   title: string;
   price: number;
   rating: number;
   category?: string;
-  className?: string;   
-  imageClassName?: string; 
+  className?: string;
+  imageClassName?: string;
   animationClassName?: string;
 };
 
 function ProductCard({
+  id,
   image,
   title,
   price,
   rating,
   category,
-  className = "",      
-  imageClassName = "", 
- animationClassName = "transition-all duration-500 hover:-translate-y-2",
-  
+  className = "",
+  imageClassName = "",
+  animationClassName = "transition-all duration-500 hover:-translate-y-2",
 }: ProductCardProps) {
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
 
   function getBadgeVariant() {
     if (category === "Laptops") {
@@ -38,8 +43,13 @@ function ProductCard({
     return "inStock";
   }
 
+  function handleNavigate() {
+    navigate(`/Products/${id}`);
+  }
+
   return (
     <div
+      onClick={handleNavigate}
       className={`
         bg-white
         rounded-3xl
@@ -47,20 +57,23 @@ function ProductCard({
         border
         border-transparent
         shadow-md
-        transition-all
-        hover:shadow-2xl
-        hover:border-accent
-        ${animationClassName}
-         hover:shadow-2xl",
+        cursor-pointer
         group
         flex
         flex-col
         h-full
-        ${className} 
+        transition-all
+        duration-500
+        hover:shadow-2xl
+        hover:border-accent
+        hover:-translate-y-2
+        ${animationClassName}
+        ${className}
       `}
     >
-      {/* IMAGE CONTAINER */}
+      {/* IMAGE */}
       <div className="relative overflow-hidden">
+
         {/* BADGE */}
         <div className="absolute top-4 right-4 z-10">
           <Badge
@@ -69,9 +82,10 @@ function ProductCard({
           />
         </div>
 
-        {/* WISHLIST */}
+        {/* PREMIUM ICON */}
         <div className="absolute top-4 left-4 z-10">
           <button
+            onClick={(e) => e.stopPropagation()}
             className="
               w-10
               h-10
@@ -82,29 +96,36 @@ function ProductCard({
               flex
               items-center
               justify-center
-              text-accent
               transition-all
               duration-300
-              hover:scale-110
               hover:border
               hover:border-accent
+              hover:scale-110
             "
           >
-            <Crown size={15} className="text-primary"/> 
+            <Crown
+              size={16}
+              className="
+                text-primary
+                transition-colors
+                duration-300
+                group-hover:text-accent
+              "
+            />
           </button>
         </div>
 
-        {/* IMAGE */}
+        {/* PRODUCT IMAGE */}
         <img
           src={image}
           alt={title}
           className={`
             w-full
             object-cover
-            transition-transform
+            transition-all
             duration-500
             group-hover:scale-110
-            ${imageClassName ? imageClassName : "h-64"}
+            ${imageClassName || "h-64"}
           `}
         />
       </div>
@@ -119,7 +140,13 @@ function ProductCard({
           gap-4
         "
       >
-        <p className="text-sm text-secondary font-medium">
+        <p
+          className="
+            text-sm
+            text-secondary
+            font-medium
+          "
+        >
           {category}
         </p>
 
@@ -127,9 +154,12 @@ function ProductCard({
           className="
             text-lg
             font-bold
-            text-gray-800
+            text-primary
             line-clamp-2
             min-h-[56px]
+            transition-colors
+            duration-300
+            group-hover:text-accent
           "
         >
           {title}
@@ -144,43 +174,58 @@ function ProductCard({
             flex
             items-center
             justify-between
-            gap-3
           "
         >
-          {/* PRICE */}
           <div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-secondary">
               {t("products.price")}
             </p>
 
-            <p className="text-primary text-2xl font-bold">
+            <p
+              className="
+                text-primary
+                text-2xl
+                font-bold
+                transition-colors
+                duration-300
+                group-hover:text-accent
+              "
+            >
               ${price}
             </p>
           </div>
 
-          {/* CART ICON */}
           <button
+            onClick={(e) => e.stopPropagation()}
             className="
               w-12
               h-12
-              p-0
-              flex
-              items-center
-              justify-center
               rounded-2xl
               bg-white
               border
               border-gray-200
-              text-accent
-              text-xl
+              flex
+              items-center
+              justify-center
               shadow-sm
               transition-all
               duration-300
               hover:border-accent
-              hover:scale-105">
-              <ShoppingCart  size={25} className="text-primary" />
-                    
-             </button>
+              hover:bg-accent
+              hover:scale-105
+              group/cart
+            "
+          >
+            <ShoppingCart
+              size={22}
+              className="
+                text-primary
+                transition-colors
+                duration-300
+                group-hover/cart:text-white
+              "
+            />
+          </button>
         </div>
       </div>
     </div>
