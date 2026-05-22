@@ -99,5 +99,46 @@
   "filters": {
     "priceRange": "Price Range",
     "resetFilters": "reset Filters"
+  },
+  "details": {
+  "freeShipping": "Free Shipping",
+  "warranty": "2 Year Warranty",
+  "returns": "30 Day Returns",
+  "description": "Description",
+  "specs": "Specifications",
+  "reviews": "Reviews",
+  "quantity": "Quantity",
+  "relatedProducts": "Related Products",
+  "addToCart": "Add To Cart",
+  "productNotFound": "Product Not Found",
+  "review1": "Excellent quality and fast delivery.",
+"review2": "Premium build and amazing performance."
+},
+"breadcrumb": {
+  "home": "Home",
+  "product": "Product"
+},
+"productsDescriptions": {
+  "laptop": "High performance gaming laptop with premium cooling system and RTX graphics.",
+  "keyboard": "Mechanical keyboard with RGB lighting and responsive switches.",
+  "mouse": "Wireless mouse designed for gaming precision and comfort.",
+  "gpu": "Flagship graphics card built for rendering and gaming.",
+  "headset": "Premium gaming headset with immersive surround audio.",
+  "monitor": "Ultra wide monitor perfect for multitasking and gaming."
+},
+ "footer": {
+    "tagline": "Modern Technology With Premium Quality",
+    "description": "Your trusted destination for premium devices and accessories with a modern experience and elegant design.",
+    "quickLinks": "Quick Links",
+    "customerService": "Customer Service",
+    "contact": "Contact Us",
+    "about": "About Us",
+    "shipping": "Shipping Policy",
+    "returns": "Returns & Exchanges",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "address": "Damascus - Syria",
+    "rights": "All rights reserved",
+    "madeWith": "Crafted with care for ShamStore"
   }
 }

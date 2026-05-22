@@ -1,13 +1,3 @@
-
-
-/*
-========================================
-Temporary Mock Data
-----------------------------------------
-Static product data for UI rendering
-========================================
-*/
-
 /*
 ========================================
 ProductGrid Component
@@ -15,6 +5,7 @@ ProductGrid Component
 Responsive grid for product cards
 ========================================
 */
+
 import ProductCard from "../ProductCard/ProductCard";
 
 type Product = {
@@ -45,6 +36,7 @@ function ProductGrid({
       {products.map((product) => (
         <ProductCard
           key={product.id}
+          id={product.id}
           image={product.image}
           title={product.title}
           price={product.price}
