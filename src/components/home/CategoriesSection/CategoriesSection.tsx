@@ -9,27 +9,27 @@ export default function CategoriesSection() {
   // --- Categories Data Array ---
   // We place this array inside the component so it has access to the 't' function.
   // It holds the data for each category card including translated text, icons, and links.
-  const categories = [
+ const categories = [
     {
       title: t("Computer Parts.Computer Parts"),
       description: t("Computer Parts.title"),
-      icon: <Cpu className="w-6 h-6" />, // Passing the Lucide-react icon as a JSX element
+      icon: <Cpu className="w-6 h-6" />,
       linkText: t("Computer Parts.linkText"),
-      href: "/parts" // URL path to navigate to when clicked
+      href: "/Products?category=Parts" // تم التعديل هنا
     },
     {
       title: t("Accessories.Accessories"),
       description: t("Accessories.title"),
       icon: <Headphones className="w-6 h-6" />,
       linkText: t("Accessories.linkText"),
-      href: "/accessories"
+      href: "/Products?category=Accessories" // تم التعديل هنا
     },
     {
       title: t("Laptops.Laptops"),
       description: t("Laptops.title"),
       icon: <MonitorSmartphone className="w-6 h-6" />,
       linkText: t("Laptops.linkText"),
-      href: "/laptops"
+      href: "/Products?category=Laptops" // تم التعديل هنا
     }
   ];
   
