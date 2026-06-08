@@ -18,6 +18,7 @@ import {
   MessageSquareMore,
   CircleCheckBig,
 } from "lucide-react";
+import { useCartStore } from "../../store/cartStore";
 
 function ProductDetails() {
   const { t } = useTranslation();
@@ -25,7 +26,26 @@ function ProductDetails() {
   // 1. التقاط الـ ID من الرابط وأدوات التنقل
   const { id } = useParams();
   const navigate = useNavigate();
+  const addToCart = useCartStore(
+  (state) => state.addToCart
+);
 
+const handleAddToCart = () => {
+  if (!product) return;
+
+  addToCart(
+    {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+    },
+    quantity
+  );
+
+  navigate("/Cart");
+};
+  
   // 2. البحث عن المنتج بناءً على الـ ID
   const product = useMemo(
     () => products.find((item) => item.id === Number(id)),
@@ -167,12 +187,12 @@ function ProductDetails() {
             {/* BUTTONS */}
             <div className="flex gap-3 mt-8">
               <button
-                onClick={() => navigate("/cart")}
-                className="flex-1 h-14 bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid rounded-2xl text-white font-semibold flex items-center justify-center gap-3 hover:scale-[1.02] hover:shadow-xl transition-all"
-              >
-                <ShoppingCart />
-                {t("details.addToCart")}
-              </button>
+  onClick={handleAddToCart}
+  className="flex-1 h-14 bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid rounded-2xl text-white font-semibold flex items-center justify-center gap-3 hover:scale-[1.02] hover:shadow-xl transition-all"
+>
+  <ShoppingCart />
+  {t("details.addToCart")}
+</button>
 
               <button className="w-14 border rounded-2xl flex items-center justify-center hover:border-accent hover:text-accent transition-all">
                 <Heart />
