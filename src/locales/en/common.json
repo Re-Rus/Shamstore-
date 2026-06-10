@@ -169,6 +169,21 @@
     "sign":"Sign In",
     "dont":"Don't have an account?",
     "shoose":"or continue with"
-
-   }
+   },
+   "cartPage": {
+  "summary": "Order Summary",
+  "items": "Items",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "free": "Free",
+  "tax": "Tax (10%)",
+  "total": "Total",
+  "checkout": "Proceed To Checkout",
+  "secure": "Secure checkout",
+  "returns": "Free returns within 30 days",
+  "authentic": "Authentic products guaranteed",
+  "emptyTitle": "Your cart is empty",
+  "emptyDescription": "Add products to start shopping.",
+  "continueShopping": "Continue Shopping"
+}
 }

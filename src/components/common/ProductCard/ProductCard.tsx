@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Badge from "../../ui/Badge/Badge";
 import { Crown, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useCartStore } from "../../../store/cartStore";
 
 type ProductCardProps = {
   id: number;
@@ -30,6 +31,9 @@ function ProductCard({
   const { t } = useTranslation();
 
   const navigate = useNavigate();
+  const addToCart = useCartStore(
+  (state) => state.addToCart
+);
 
   function getBadgeVariant() {
     if (category === "Laptops") {
@@ -196,26 +200,35 @@ function ProductCard({
           </div>
 
           <button
-            onClick={(e) => e.stopPropagation()}
-            className="
-              w-12
-              h-12
-              rounded-2xl
-              bg-white
-              border
-              border-gray-200
-              flex
-              items-center
-              justify-center
-              shadow-sm
-              transition-all
-              duration-300
-              hover:border-accent
-              hover:bg-accent
-              hover:scale-105
-              group/cart
-            "
-          >
+  onClick={(e) => {
+    e.stopPropagation();
+
+    addToCart({
+      id,
+      title,
+      price,
+      image,
+    });
+  }}
+  className="
+    w-12
+    h-12
+    rounded-2xl
+    bg-white
+    border
+    border-gray-200
+    flex
+    items-center
+    justify-center
+    shadow-sm
+    transition-all
+    duration-300
+    hover:border-accent
+    hover:bg-accent
+    hover:scale-105
+    group/cart
+  "
+>
             <ShoppingCart
               size={22}
               className="
