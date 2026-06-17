@@ -5,9 +5,12 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { ShoppingCart } from 'lucide-react';
 import Input from "../../ui/Input/Input";
 import logo from "../../../assets/logo.png";
+import { useCartStore } from "../../../store/cartStore";
 export default function Header() {
-
   const { t } = useTranslation();
+  const totalItems = useCartStore(
+  (state) => state.totalItems()
+);
   return (
     <header className="fixed w-full bg-white bg-opacity-95 shadow-md px-4 md:px-6 py-3 z-20 ">
       <div className="grid grid-cols-[auto_1fr_auto] items-center">
@@ -41,9 +44,41 @@ export default function Header() {
           <NavItem to="/Products" label={t("nav.products")} />
           <NavItem to="/Dashboard" label={t("nav.dashboard")} />
         </nav>
-          <NavItem to="/cart" className="text-xl" hideUnderline={true}>
-            <ShoppingCart  size={25} className="text-primary" />
-          </NavItem>
+         <NavItem
+  to="/cart"
+  className="text-xl relative"
+  hideUnderline={true}
+>
+  <div className="relative">
+    <ShoppingCart
+      size={25}
+      className="text-primary"
+    />
+
+    {totalItems > 0 && (
+      <span
+        className="
+          absolute
+          -top-2
+          -right-2
+          min-w-[18px]
+          h-[18px]
+          px-1
+          rounded-full
+          bg-accent
+          text-white
+          text-[10px]
+          flex
+          items-center
+          justify-center
+          font-bold
+        "
+      >
+        {totalItems}
+      </span>
+    )}
+  </div>
+</NavItem>
           <Link
          to="/login"
           className="px-4 py-2 text-x font-medium 
