@@ -9,16 +9,19 @@ return(
      {/* CONTENT */}
 
       <div
-        className="
+       className="
           absolute
           z-10
           h-full
+          w-full
           flex
           flex-col
-          items-center
           justify-center
-          text-center
-          px-6">
+          items-start
+          text-start
+          px-8
+          md:px-10
+          lg:px-14">
         <h1
           className="
             text-4xl

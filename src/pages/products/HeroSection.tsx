@@ -7,28 +7,21 @@ function HeroSection() {
     <section
        className="relative overflow-hidden w-full h-64 bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid to-100%"
     >
-      {/* OVERLAY */}
-
-      <div
-        className="
-          absolute
-        "
-      />
-
       {/* CONTENT */}
-
       <div
         className="
           absolute
           z-10
           h-full
+          w-full
           flex
           flex-col
-          items-center
           justify-center
-          text-center
-          px-6
-        "
+          items-start
+          text-start
+          px-8
+          md:px-10
+          lg:px-14"
       >
         <h1
           className="
@@ -36,8 +29,7 @@ function HeroSection() {
             lg:text-5xl
             font-black
             text-secondary
-          "
-        >
+            ">
           {t("products.ourProducts")}
         </h1>
 

@@ -35,9 +35,7 @@ export default function CartSummary({
         transition-all
         duration-300
         hover:border-accent
-        hover:shadow-xl
-      "
-    >
+        hover:shadow-xl">
       <h2
         className="
           text-2xl

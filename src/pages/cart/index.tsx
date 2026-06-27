@@ -40,9 +40,7 @@ export default function Cart() {
               transition-all
               duration-300
               hover:border-accent
-              hover:shadow-xl
-            "
-          >
+              hover:shadow-xl ">
             <div className="flex justify-center mb-6">
               <div
                 className="

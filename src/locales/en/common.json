@@ -4,7 +4,9 @@
     "products": "Products",
     "cart": "Cart",
     "checkout": "Checkout",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "Login":"Log in"
+
   },
   "logo":{
     "shamstore": "Damasco store"
@@ -84,8 +86,8 @@
     "featured": "featured",
     "highToLow": "Price: From highest to lowest",
     "lowToHigh": "Price: From lowest to highest",
-    "rating": "التقييم",
-    "newest": "الأحدث"
+    "rating":"Rating",
+    "newest": "Newest"
   },
 
   "categories": {

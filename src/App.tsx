@@ -8,6 +8,10 @@ import Signup from "./pages/auth/Signup";
 import Checkout from "./pages/checkout";
 import Cart from "./pages/cart";
 import Dashboard from "./pages/dashboard";
+import Orders from "./pages/dashboard/Orders";
+import ProductsDashboard from "./pages/dashboard/Products";
+import ProtectedRoute from "./components/common/ProtectedRoute/index.tsx";
+import AdminLogin from './pages/dashboard/AdminLogin';
 export default function App() {
   return (
     <>
@@ -21,9 +25,16 @@ export default function App() {
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Login" element={<Login />} />
-               <Route path="/Signup" element={<Signup />} />
+              <Route path="/Signup" element={<Signup />} />
+              </Route>
+
+              <Route element={<ProtectedRoute />}>
               <Route path="/Dashboard" element={<Dashboard />} />
-            </Route>
+              <Route path="/Dashboard/orders" element={<Orders />} />
+              <Route path="/Dashboard/products" element={<ProductsDashboard />} />
+          
+              </Route>
+                  <Route path="/admin-login" element={<AdminLogin />} />
           </Routes>
         </main>
       </BrowserRouter>
