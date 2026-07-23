@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Define the properties this component expects to receive
 export interface CategoryCardProps {
   title: string;
   description: string;
@@ -13,20 +12,17 @@ export interface CategoryCardProps {
 export default function CategoryCard({ title, description, icon, linkText, href }: CategoryCardProps) {
   return (
    <section> 
-    {/*  Main Card Container: 'group' class is added to trigger hover effects on inner elements */}
     <div className="relative overflow-hidden bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 border border-[#f2e7d8] group flex flex-col h-full">
       
-      {/*  Architectural touch: Decorative background circle (top right) */}
       <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f2e7d8] rounded-full transition-transform duration-500 group-hover:scale-110 pointer-events-none"></div>
 
-      {/*  Icon container with smooth rounded corners and a gradient background */}
       <div className="relative z-10 w-14 h-14 rounded-2xl
        bg-gradient-to-br from-hero-start from-0% via-hero-end via-65% to-hero-mid to-100%
        text-white flex items-center justify-center mb-6 shadow-sm">
         {icon}
       </div>
 
-      {/*  Text content (Title and Description) */}
+
       <div className="relative z-10 flex-grow flex flex-col">
         <h3 className="text-2xl font-bold text-neutral-900 mb-2 tracking-tight">
           {title}
@@ -36,7 +32,6 @@ export default function CategoryCard({ title, description, icon, linkText, href 
         </p>
       </div>
 
-      {/*  Interactive navigation link with a dynamic animated arrow */}
       <Link 
         to={href} 
         className="relative z-10 inline-flex items-center gap-2 text-accent font-semibold text-sm w-fit group/link"

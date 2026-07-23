@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link} from 'react-router-dom'; // أضفنا التوجيه
+import { Link} from 'react-router-dom'; 
 import logo from "../../../assets/logo.png";
 import { useTranslation } from "react-i18next";
 import { Mail, EyeClosed, Eye, LockKeyhole } from 'lucide-react';
@@ -9,29 +9,28 @@ export default function SignInCard() {
   const { t } = useTranslation();
 
 
-  // 1. إنشاء States لحفظ ما يكتبه المستخدم في الحقول
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // 2. دالة تسجيل الدخول والحفظ في الذاكرة المحلية
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault(); // منع إعادة تحميل الصفحة
 
-    // تحقق بسيط للتأكد من أن الحقول غير فارغة
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault(); 
+
     if (!email || !password) {
       alert("يرجى إدخال البريد الإلكتروني وكلمة المرور!");
       return;
     }
 
-    // تجهيز كائن البيانات (بدون كلمة المرور لأسباب أمنية)
+   
     const sessionData = {
       email: email,
       isLoggedIn: true,
       role: 'customer',
-      token: "techsouk_mock_token_892374" // محاكاة لرمز الجلسة من السيرفر
+      token: "techsouk_mock_token_892374" 
     };
 
-    // حفظ البيانات في localStorage وتحويلها إلى نص (String)
+
     localStorage.setItem('techsouk_session', JSON.stringify(sessionData));
 
     console.log("Session saved:", sessionData);
@@ -55,7 +54,7 @@ export default function SignInCard() {
         <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">{t("log.title")}</h1>
         <p className="text-sm font-medium text-accent mb-8">{t("log.def")}</p>
 
-        {/* 3. ربط النموذج بدالة handleLogin */}
+
         <form className="w-[400px] space-y-5" onSubmit={handleLogin}>
           
           <div className="flex flex-col space-y-1.5">
@@ -66,8 +65,8 @@ export default function SignInCard() {
               </span>
               <input
                 type="email" 
-                value={email} // ربط القيمة بالـ State
-                onChange={(e) => setEmail(e.target.value)} // تحديث الـ State عند الكتابة
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
                 placeholder="your.email@example.com" 
                 className="w-full pl-12 pr-4 py-3.5 bg-white border border-gray-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all placeholder:text-gray-400 text-gray-700"
               />
@@ -82,8 +81,8 @@ export default function SignInCard() {
               </span>
               <input 
                 type={showPassword ? "text" : "password"} 
-                value={password} // ربط القيمة بالـ State
-                onChange={(e) => setPassword(e.target.value)} // تحديث الـ State عند الكتابة
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
                 placeholder="Enter your password" 
                 className="w-full pl-12 pr-12 py-3.5 bg-white border border-gray-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all placeholder:text-gray-400 text-gray-700"
               />

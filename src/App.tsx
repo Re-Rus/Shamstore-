@@ -26,6 +26,7 @@ export default function App() {
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
+              <Route path="/Checkout" element={<Checkout />} /> 
               </Route>
 
               <Route element={<ProtectedRoute />}>

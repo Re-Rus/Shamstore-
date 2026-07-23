@@ -1,0 +1,108 @@
+{
+    "orderSummary": {
+  "title": "Order Summary",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "free": "Free",
+  "tax": "Tax (10%)",
+  "total": "Total",
+  "placeOrder": "Place Order",
+  "secure": "Secure checkout",
+  "returns": "Free returns within 30 days",
+  "authentic": "Authentic products guaranteed"
+},
+"Satcards":{
+  "Total Sales":"Total Sales",
+  "salecontext": "vs last month",
+  "Total Orders": "Total Orders", 
+  "ordercontext": "vs last month",
+  "Total Products": "Total Products", 
+  "productcontext": "vs last month",
+  "Total Customers":"Total Customers",
+  "customercontext": "vs last month"
+
+},
+"RecentOrders":{
+  "Recent Orders":"Recent Orders",
+"Latest customer orders":"Latest customer orders",
+"View All":"View All",
+"Order ID":"Order ID",
+"Customer":"Customer",
+"Product":"Product",
+"Date":"Date",
+"Status":"Status",
+"Amount":"Amount"
+},
+"Products":{
+  "low-stock":"low-stock",
+  "Low Stock Alerts":"Low Stock Alerts",
+  "Inventory Management":"Inventory Management",
+  "Manage your products and track inventory":"Manage your products and track inventory",
+  "Add New Product":"Add New Product",
+  "Filter":"Filter",
+  "products":"products",
+  "Product Name":"Product Name",
+  "Category":"Category",
+  "Price":"Price",
+  "Stock":"Stock",
+  "Status":"Status",
+  "Actions":"Actions",
+  "No products found":"  No products found."
+},
+"AddProductModal" :{
+ "Add New Product":"Add New Product",
+ "Product Name":"Product Name",
+ "Initial Stock":"Initial Stock",
+ "Category":"Category",
+ "Laptops":"Laptops",
+ "Accessories":"Accessories",
+ "Computer Parts":"Computer Parts",
+ "Monitors":"Monitors",
+ "Product Image":"Product Image",
+ "Click to upload or drag and drop":"Click to upload or drag and drop",
+ "Save Product":"Save Product"
+},
+"Orders":{
+"All":"All",
+"All Orders":"All Orders",
+"Manage and track your customer orders":"Manage and track your customer orders",
+"Search orders by ID, Customer, or Product": "Search orders by ID, Customer, or Product...",
+"All Statuses":"All Statuses",
+"Pending": "Pending",
+"Processing":"Processing",
+"Shipped":"Shipped",
+"Completed":"Completed",
+"Returned":"Returned",
+"Showing":"Showing",
+"orders":"orders",
+"Order ID":"Order ID",
+"Customer":"Customer",
+"Product":"Product",
+"Date":"Date",
+"Status":"Status",
+"Amount":"Amount",
+"No orders found matching your search or filter":"No orders found matching your search or filter.",
+"title_Pending": "Pending Orders",
+"title_Returned": "Returned Orders",
+"title_Completed": "Completed Orders",
+"title_Processing": "Processing Orders"
+},
+"Analytics":{
+   "Sales Analytics":"Sales Analytics",
+    "Monthly sales performance":"Monthly sales performance",
+    "Action Center":"Action Center",
+    "Pending Orders":"Pending Orders",
+    "Needs processing":"Needs processing",
+    "Low Stock Items":"Low Stock Items",
+    "Restock required":"Restock required",
+    "Returns":"Returns",
+    "Awaiting inspection":"Awaiting inspection",
+    "Completed":"Completed",
+    "Successfully delivered":"Successfully delivered"
+},
+"Index":{
+    "Dashboard Overview":"Dashboard Overview",
+    "Welcome back! Here's what's happening with your store":"Welcome back! Here's what's happening with your store."
+}
+
+}

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import AddProductModal from './ProductModal';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Container } from '../../components/common/Container';
 import { ArrowLeft, Search, Filter, Plus, Edit, Trash2 } from 'lucide-react';
 
-// Mock data - to be replaced with real API fetch later
+
+// Temporary mock data until products API connected
 const initialProducts = [
   { id: "#PROD-001", name: "ASUS ROG Gaming Laptop", category: "Laptops", price: "$1200", stock: 4, status: "Low Stock" },
   { id: "#PROD-002", name: "Mechanical RGB Keyboard", category: "Accessories", price: "$150", stock: 45, status: "In Stock" },
@@ -14,8 +16,8 @@ const initialProducts = [
   { id: "#PROD-006", name: "Premium Wireless Headphones", category: "Accessories", price: "$299", stock: 8, status: "Low Stock" },
 ];
 
-// Helper to get badge colors based on stock status
-const getStockBadge = (status: string) => {
+// badge styles
+const badgeclasss = (status: string) => {
   switch (status) {
     case 'In Stock': return 'bg-green-100 text-green-700';
     case 'Low Stock': return 'bg-orange-100 text-orange-700';
@@ -25,6 +27,7 @@ const getStockBadge = (status: string) => {
 };
 
 export default function Products() {
+   const { t } = useTranslation('dashboard');
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter'); 
@@ -76,7 +79,7 @@ export default function Products() {
   });
 
   return (
-    <div className="bg-background min-h-screen pt-10 pb-10">
+  <div className="bg-background min-h-screen pt-10 pb-10">
       <Container>
         
         {/* Header */}
@@ -84,15 +87,15 @@ export default function Products() {
           <div className="flex items-center gap-4">
             <button 
               onClick={() => navigate('/Dashboard')}
-              className="p-2 bg-white rounded-xl border border-secondary/20 hover:bg-neutral-50 transition-colors"
-            >
+              className="p-2 bg-white rounded-xl border border-secondary/20 hover:bg-neutral-50 transition-colors">
               <ArrowLeft size={20} className="text-neutral-600" />
             </button>
             <div>
               <h1 className="text-3xl font-bold text-neutral-900">
-                {filter === 'low-stock' ? "Low Stock Alerts" : "Inventory Management"}
+                {filter === t("Products.low-stock") ? t("Products.Low Stock Alerts") : t("Products.Inventory Management")}
               </h1>
-              <p className="text-neutral-500 text-sm mt-1">Manage your products and track inventory</p>
+              {/* 2. إزالة المسافة الزائدة قبل Products */}
+              <p className="text-neutral-500 text-sm mt-1">{t("Products.Manage your products and track inventory")}</p>
             </div>
           </div>
           
@@ -100,7 +103,7 @@ export default function Products() {
             onClick={() => setIsModalOpen(true)}
             className="flex items-center gap-2 px-5 py-3 bg-accent text-white rounded-2xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
           >
-            <Plus size={20} /> Add New Product
+            <Plus size={20} />{t("Products.Add New Product")} 
           </button>
         </div>
 
@@ -118,28 +121,27 @@ export default function Products() {
           </div>
           <button 
              onClick={() => alert("Advanced filter modal will open here")}
-             className="flex items-center gap-2 px-6 py-3 bg-neutral-50 border border-neutral-200 rounded-2xl text-neutral-700 font-medium hover:border-accent hover:text-accent transition-colors"
-          >
-            <Filter size={20} /> Filter
+             className="flex items-center gap-2 px-6 py-3 bg-neutral-50 border border-neutral-200 rounded-2xl text-neutral-700 font-medium hover:border-accent hover:text-accent transition-colors">
+            <Filter size={20} />{t("Products.Filter")} 
           </button>
         </div>
 
         {/* Data Table */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border border-secondary/10">
           <p className="text-sm text-neutral-500 mb-6 font-medium">
-            Showing {displayedProducts.length} products
+            Showing {displayedProducts.length} {t("Products.products")} 
           </p>
           
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Product Name</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Category</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Price</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Stock</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Status</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm text-right">Actions</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Products.Product Name")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Products.Category")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Products.Price")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Products.Stock")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Products.Status")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm text-right">{t("Products.Actions")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -154,7 +156,7 @@ export default function Products() {
                       <td className="py-4 px-4 font-bold text-neutral-900">{product.price}</td>
                       <td className="py-4 px-4 font-medium text-neutral-700">{product.stock} units</td>
                       <td className="py-4 px-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStockBadge(product.status)}`}>
+                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${badgeclasss(product.status)}`}>
                           {product.status}
                         </span>
                       </td>
@@ -179,10 +181,9 @@ export default function Products() {
                     </tr>
                   ))
                 ) : (
-                  /* Empty State */
                   <tr>
                     <td colSpan={6} className="text-center py-12 text-neutral-500">
-                      No products found.
+                      {t("Products.No products found")}
                     </td>
                   </tr>
                 )}

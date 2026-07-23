@@ -8,11 +8,11 @@ export default function Signup() {
   const { t } = useTranslation();
 
 
-  // 1. إنشاء States لحفظ بيانات المستخدم الجديد
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // 2. دالة إنشاء الحساب والحفظ التلقائي في الذاكرة المحلية
+
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -21,12 +21,12 @@ export default function Signup() {
       return;
     }
 
-    // محاكاة إنشاء حساب جديد وحفظ الجلسة فوراً
+
     const sessionData = {
       email: email,
       isLoggedIn: true,
       role: 'customer',
-      token: "techsouk_mock_token_new_user_123" // رمز محاكاة لمستخدم جديد
+      token: "techsouk_mock_token_new_user_123" 
     };
 
     localStorage.setItem('techsouk_session', JSON.stringify(sessionData));
@@ -51,7 +51,6 @@ export default function Signup() {
         <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">{t("sign.title")}</h1>
         <p className="text-sm font-medium text-accent mb-8">{t("sign.def")}</p>
 
-        {/* 3. ربط النموذج بدالة إنشاء الحساب */}
         <form className="w-[400px] space-y-5" onSubmit={handleSignup}>
           
           <div className="flex flex-col space-y-1.5">
@@ -62,8 +61,8 @@ export default function Signup() {
               </span>
               <input
                 type="email" 
-                value={email} // ربط القيمة
-                onChange={(e) => setEmail(e.target.value)} // تحديث الحالة
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
                 placeholder="your.email@example.com" 
                 className="w-full pl-12 pr-4 py-3.5 bg-white border border-gray-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all placeholder:text-gray-400 text-gray-700"
               />
@@ -78,8 +77,8 @@ export default function Signup() {
               </span>
               <input 
                 type={showPassword ? "text" : "password"} 
-                value={password} // ربط القيمة
-                onChange={(e) => setPassword(e.target.value)} // تحديث الحالة
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password" 
                 className="w-full pl-12 pr-12 py-3.5 bg-white border border-gray-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all placeholder:text-gray-400 text-gray-700"
               />

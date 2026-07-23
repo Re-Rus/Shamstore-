@@ -1,48 +1,50 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { DollarSign, ShoppingCart, Package, Users, TrendingUp, ArrowUpRight } from 'lucide-react';
-
-// Mock data - replace with API fetch later
-const statsData = [
-  { 
-    title: "Total Sales", 
-    value: "$37,245", 
-    increase: "+12.5%", 
-    context: "vs last month",
-    icon: <DollarSign size={24} className="text-white" />, 
-    bgColor: "bg-green-800",
-    link: "/Dashboard/orders"
-  },
-  { 
-    title: "Total Orders", 
-    value: "2,847", 
-    increase: "+8.2%", 
-    context: "vs last month",
-    icon: <ShoppingCart size={24} className="text-white" />, 
-    bgColor: "bg-green-800",
-    link: "/Dashboard/orders"
-  },
-  { 
-    title: "Total Products", 
-    value: "156", 
-    increase: "+5.1%", 
-    context: "vs last month",
-    icon: <Package size={24} className="text-white" />, 
-    bgColor: "bg-green-800",
-    link: "/Dashboard/products"
-  },
-  { 
-    title: "Total Customers", 
-    value: "1,284", 
-    increase: "+15.3%", 
-    context: "vs last month",
-    icon: <Users size={24} className="text-white" />, 
-    bgColor: "bg-green-800",
-    link: "#" // TODO: Add customers route later
-  }
-];
 
 export default function StatCards() {
   const navigate = useNavigate();
+const { t } = useTranslation('dashboard');
+
+
+  const statsData = [
+    { 
+      title: t('Satcards.Total Sales'), 
+      value: "$37,245", 
+      increase: "+12.5%", 
+      context: t('Satcards.salecontext'), 
+      icon: <DollarSign size={24} className="text-white" />, 
+      bgColor: "bg-green-800",
+      link: "/Dashboard/orders"
+    },
+    { 
+      title: t('Satcards.Total Orders'), 
+      value: "2,847", 
+      increase: "+8.2%", 
+      context: t('Satcards.ordercontext'),
+      icon: <ShoppingCart size={24} className="text-white" />, 
+      bgColor: "bg-green-800",
+      link: "/Dashboard/orders"
+    },
+    { 
+      title: t('Satcards.Total Products'), 
+      value: "156", 
+      increase: "+5.1%", 
+      context: t('Satcards.productcontext'),
+      icon: <Package size={24} className="text-white" />, 
+      bgColor: "bg-green-800",
+      link: "/Dashboard/products"
+    },
+    { 
+      title: t('Satcards.Total Customers'), 
+      value: "1,284", 
+      increase: "+15.3%", 
+      context: t('Satcards.customercontext'),
+      icon: <Users size={24} className="text-white" />, 
+      bgColor: "bg-green-800",
+      link: "#" // TODO: Add customers route later
+    }
+  ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

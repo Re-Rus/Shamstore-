@@ -5,7 +5,6 @@ import Footer from "./Footer/Footer";
 export function Layout() {
   const location = useLocation();
   
-  // 1. مسارات المصادقة التي تحتاج إخفاء الهيدر
   const authRoutes = ["/login", "/signup", "/register", "/forgot-password"];
   
   const shouldHideLayout = 

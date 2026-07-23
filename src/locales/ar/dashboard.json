@@ -1,0 +1,96 @@
+{  
+"Satcards":{
+  "Total Sales":"إجمالي المبيعات",
+  "salecontext": "مقارنة بالشهر الماضي",
+  "Total Orders": "إجمالي الطلبات",
+  "ordercontext": "مقارنة بالشهر الماضي",
+  "Total Products": "إجمالي المنتجات",
+  "productcontext":"مقارنة بالشهر الماضي",
+  "Total Customers":"إجمالي العملاء",
+  "customercontext": "مقارنة بالشهر الماضي"
+},
+"RecentOrders":{
+"Recent Orders":"الطلبات الأخيرة",
+"Latest customer orders":"أحدث طلبات العملاء",
+"View All":"عرض الكل",
+"Order ID":"رقم الطلب",
+"Customer":"عميل",
+"Product":"منتج",
+"Date":"تاريخ",
+"Status":"حالة",
+"Amount":"كمية"
+},
+"Products":{
+  "low-stock":"مخزون منخفض",
+  "Low Stock Alerts":"تنبيهات انخفاض المخزون",
+  "Inventory Management":"إدارة المخزون",
+  "Manage your products and track inventory":"إدارة منتجاتك وتتبع المخزون",
+  "Add New Product":"إضافة منتج جديد",
+  "Filter":"فلترة",
+  "products":"منتجات",
+  "Product Name":"اسم المنتج",
+  "Category":"فئة",
+  "Price":"سعر",
+  "Stock":"مخزون",
+  "Status":"حالة",
+  "Actions":"الإجراءات",
+  "No products found":"لم يتم العثور على منتجات."
+},
+"AddProductModal" :{
+ "Add New Product":"إضافة منتج جديد",
+ "Product Name":"اسم المنتج",
+ "Initial Stock":"المخزون الأولي",
+ "Category":"فئة",
+ "Laptops":"أجهزة الكمبيوتر المحمولة",
+ "Accessories":"مُكَمِّلات",
+ "Computer Parts":"قطع غيار الكمبيوتر",
+ "Monitors":"الشاشات",
+ "Product Image":"صورة المنتج",
+ "Click to upload or drag and drop":"انقر للتحميل أو اسحب وأفلت.",
+ "Save Product":"حفظ المنتج"
+},
+"Orders":{
+"All":"الجميع",
+"All Orders":"جميع الطلبات",
+"Manage and track your customer orders":"إدارة وتتبع طلبات عملائك",
+"Search orders by ID, Customer, or Product": "ابحث عن الطلبات حسب المعرف أو العميل أو المنتج...",
+"All Statuses":"جميع الحالات",
+"Pending":"قيد الانتظار",
+"Processing":"يعالج",
+"Shipped":"تم الشحن",
+"Completed":"مكتمل",
+"Returned":"تمت الإعادة",
+"Showing":"العرض",
+"orders":"طلبات",
+"Order ID":"رقم الطلب",
+"Customer":"عميل",
+"Product":"منتج",
+"Date":"تاريخ",
+"Status":"حالة",
+"Amount":"كمية",
+"No orders found matching your search or filter":"لم يتم العثور على أي طلبات مطابقة لعملية البحث أو الفلترة التي أجريتها.",
+"title_Pending": "طلبات قيد الانتظار",
+"title_Returned": "طلبات تمت إعادتها",
+"title_Completed": "طلبات مكتملة",
+"title_Processing": "طلبات قيد المعالجة"
+},
+"Analytics":{
+   "Sales Analytics":"تحليلات المبيعات",
+    "Monthly sales performance":"أداء المبيعات الشهرية",
+    "Action Center":"مركز العمل",
+    "Pending Orders":"طلبات معلقة",
+    "Needs processing":"بحاجة إلى معالجة",
+    "Low Stock Items":"منتجات ذات مخزون منخفض",
+    "Restock required":"إعادة التخزين مطلوبة",
+    "Returns":"المرتجعات",
+    "Awaiting inspection":"في انتظار المعاينة",
+    "Completed":"مكتمل",
+    "Successfully delivered":"تم التسليم بنجاح"
+},
+"Index":{
+    "Dashboard Overview":"نظرة عامة على لوحة المعلومات",
+    "Welcome back! Here's what's happening with your store":"أهلاً بعودتك! إليك ما يحدث في متجرك."
+}
+
+
+}

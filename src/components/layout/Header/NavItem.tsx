@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 
 type NavItemProps = {
   to: string;
-  label?: string;    // جعل النص اختيارياً
-  children?: ReactNode; // إضافة الأطفال كخيار
+  label?: string;
+  children?: ReactNode; 
   className?: string;
   hideUnderline?: boolean;
 };
@@ -21,13 +21,10 @@ export default function NavItem({ to, label, children, hideUnderline }: NavItemP
               isActive
                 ? "text-[#C6A13A]"
                 : "text-[#1B5E20] transition-colors duration-300 group-hover:text-[#C6A13A]"
-            }
-          >
-            {/* إذا وجد نص label اعرضه، وإلا اعرض الـ children (الأيقونة) */}
+            }>
             {label ? t(label) : children}
           </span>
 
-          {/* الخط السفلي - سيعمل للأيقونة وللنص بنفس الطريقة */}
           {!hideUnderline &&(<span
             className={`
               absolute left-0 bottom-0 

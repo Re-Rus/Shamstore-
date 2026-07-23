@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Container } from '../../components/common/Container';
 import { ArrowLeft, Search, Filter } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Mock data - replace with API fetch later
 const allOrders = [
@@ -48,7 +49,7 @@ export default function Orders() {
 
     return matchesStatus && matchesSearch;
   });
-
+     const { t } = useTranslation('dashboard');
   return (
     <div className="bg-background min-h-screen pt-10 pb-10">
       <Container>
@@ -63,9 +64,9 @@ export default function Orders() {
           </button>
           <div>
             <h1 className="text-3xl font-bold text-neutral-900">
-              {activeStatus !== "All" ? `${activeStatus} Orders` : "All Orders"}
+              {activeStatus !== t("Orders.All") ? t(`Orders.title_${activeStatus}`): t("Orders.All Orders")}
             </h1>
-            <p className="text-neutral-500 text-sm mt-1">Manage and track your customer orders</p>
+            <p className="text-neutral-500 text-sm mt-1">{t("Orders.Manage and track your customer orders")}</p>
           </div>
         </div>
 
@@ -78,7 +79,7 @@ export default function Orders() {
               type="text" 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search orders by ID, Customer, or Product..." 
+              placeholder={t("Orders.Search orders by ID, Customer, or Product")}
               className="w-full pl-12 pr-4 py-3 bg-neutral-50 border border-neutral-200 rounded-2xl outline-none focus:border-accent transition-colors"
             />
           </div>
@@ -90,12 +91,12 @@ export default function Orders() {
               onChange={(e) => setActiveStatus(e.target.value)}
               className="appearance-none flex items-center gap-2 pl-12 pr-10 py-3 bg-neutral-50 border border-neutral-200 rounded-2xl text-neutral-700 font-medium hover:border-accent hover:text-accent transition-colors outline-none cursor-pointer h-full"
             >
-              <option value="All">All Statuses</option>
-              <option value="Pending">Pending</option>
-              <option value="Processing">Processing</option>
-              <option value="Shipped">Shipped</option>
-              <option value="Completed">Completed</option>
-              <option value="Returned">Returned</option>
+              <option value="All">{t("Orders.All Statuses")}</option>
+              <option value="Pending">{t("Orders.Pending")}</option>
+              <option value="Processing">{t("Orders.Processing")}</option>
+              <option value="Shipped">{t("Orders.Shipped")}</option>
+              <option value="Completed">{t("Orders.Completed")}</option>
+              <option value="Returned">{t("Orders.Returned")}</option>
             </select>
             <Filter size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none" />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400 text-xs">
@@ -108,19 +109,19 @@ export default function Orders() {
         {/* Data Table */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border border-secondary/10">
           <p className="text-sm text-neutral-500 mb-6 font-medium">
-            Showing {displayedOrders.length} orders
+          {t("Orders.Showing")}  {displayedOrders.length} {t("Orders.orders")} 
           </p>
           
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Order ID</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Customer</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Product</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Date</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Status</th>
-                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Amount</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Orders.Order ID")}</th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Orders.Customer")} </th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm"> {t("Orders.Product")} </th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Orders.Date")} </th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm"> {t("Orders.Status")} </th>
+                  <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("Orders.Amount")} </th>
                 </tr>
               </thead>
               <tbody>
@@ -142,7 +143,7 @@ export default function Orders() {
                 ) : (
                   <tr>
                     <td colSpan={6} className="text-center py-12 text-neutral-500">
-                      No orders found matching your search or filter.
+                     {t("Orders.No orders found matching your search or filter.")}  
                     </td>
                   </tr>
                 )}

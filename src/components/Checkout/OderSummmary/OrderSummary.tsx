@@ -168,9 +168,7 @@ export default function OrderSummary({
           mt-8
           h-14
           rounded-2xl
-          hover:scale-[1.02]
-        "
-      >
+          hover:scale-[1.02]">
         {t("orderSummary.placeOrder")}
       </Button>
 
@@ -178,8 +176,7 @@ export default function OrderSummary({
         <div className="flex items-center gap-3 text-secondary text-sm">
           <ShieldCheck
             size={16}
-            className="text-accent"
-          />
+            className="text-accent"/>
 
           <span>
             {t("orderSummary.secure")}

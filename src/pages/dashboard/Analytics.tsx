@@ -1,7 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { Clock, AlertTriangle, RefreshCcw, CheckCircle2, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 interface CustomTooltipProps {
   active?: boolean;
   payload?: Array<{
@@ -37,15 +37,15 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
 
 export default function Analytics() {
   const navigate = useNavigate();
-
+   const { t } = useTranslation('dashboard');
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
       
       {/* Sales Chart Section */}
       <div className="lg:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-secondary/10 flex flex-col justify-between">
         <div>
-          <h2 className="text-xl font-bold text-neutral-900 mb-1">Sales Analytics</h2>
-          <p className="text-neutral-500 text-sm mb-6">Monthly sales performance</p>
+          <h2 className="text-xl font-bold text-neutral-900 mb-1">{t("Analytics.Sales Analytics")}</h2>
+          <p className="text-neutral-500 text-sm mb-6">{t("Analytics.Monthly sales performance")}</p>
         </div>
         
         <div className="w-full h-64 text-xs font-medium text-gray-400">
@@ -84,21 +84,22 @@ export default function Analytics() {
 
       {/* Action Center - Quick links to specific filtered views */}
       <div className="bg-white rounded-3xl p-8 shadow-sm border border-secondary/10">
-        <h2 className="text-xl font-bold text-neutral-900 mb-6">Action Center</h2>
+        <h2 className="text-xl font-bold text-neutral-900 mb-6">{t("Analytics.Action Center")}</h2>
         
         <div className="flex flex-col gap-4">
           
           <button 
             onClick={() => navigate('/Dashboard/orders?status=Pending')}
-            className="flex items-center justify-between p-4 rounded-2xl border border-orange-100 bg-orange-50 hover:bg-orange-100 transition-all duration-300 group cursor-pointer text-left"
+            className="flex items-center justify-between p-4 rounded-2xl border border-orange-100 bg-orange-50
+             hover:bg-orange-100 transition-all duration-300 group cursor-pointer text-left"
           >
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-orange-200/50 flex items-center justify-center text-orange-600">
                 <Clock size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-neutral-900">Pending Orders</p>
-                <p className="text-xs text-orange-600 font-medium mt-0.5">Needs processing</p>
+                <p className="text-sm font-bold text-neutral-900">{t("Analytics.Pending Orders")}</p>
+                <p className="text-xs text-orange-600 font-medium mt-0.5">{t("Analytics.Needs processing")}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -109,15 +110,16 @@ export default function Analytics() {
 
           <button 
             onClick={() => navigate('/Dashboard/products?filter=low-stock')}
-            className="flex items-center justify-between p-4 rounded-2xl border border-red-100 bg-red-50 hover:bg-red-100 transition-all duration-300 group cursor-pointer text-left"
+            className="flex items-center justify-between p-4 rounded-2xl border border-red-100 bg-red-50
+             hover:bg-red-100 transition-all duration-300 group cursor-pointer text-left"
           >
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-red-200/50 flex items-center justify-center text-red-600">
                 <AlertTriangle size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-neutral-900">Low Stock Items</p>
-                <p className="text-xs text-red-600 font-medium mt-0.5">Restock required</p>
+                <p className="text-sm font-bold text-neutral-900">{t("Analytics.Low Stock Items")}</p>
+                <p className="text-xs text-red-600 font-medium mt-0.5">{t("Analytics.Restock required")}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -128,15 +130,16 @@ export default function Analytics() {
 
           <button 
             onClick={() => navigate('/Dashboard/orders?status=Returned')}
-            className="flex items-center justify-between p-4 rounded-2xl border border-rose-100 bg-rose-50 hover:bg-rose-100 transition-all duration-300 group cursor-pointer text-left"
+            className="flex items-center justify-between p-4 rounded-2xl border border-rose-100 bg-rose-50
+             hover:bg-rose-100 transition-all duration-300 group cursor-pointer text-left"
           >
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-rose-200/50 flex items-center justify-center text-rose-600">
                 <RefreshCcw size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-neutral-900">Returns</p>
-                <p className="text-xs text-rose-600 font-medium mt-0.5">Awaiting inspection</p>
+                <p className="text-sm font-bold text-neutral-900">{t("Analytics.Returns")}</p>
+                <p className="text-xs text-rose-600 font-medium mt-0.5">{t("Analytics.Awaiting inspection")}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -147,15 +150,16 @@ export default function Analytics() {
 
           <button 
             onClick={() => navigate('/Dashboard/orders?status=Completed')}
-            className="flex items-center justify-between p-4 rounded-2xl border border-green-100 bg-green-50 hover:bg-green-100 transition-all duration-300 group cursor-pointer text-left"
+            className="flex items-center justify-between p-4 rounded-2xl border border-green-100 bg-green-50
+             hover:bg-green-100 transition-all duration-300 group cursor-pointer text-left"
           >
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-green-200/50 flex items-center justify-center text-green-600">
                 <CheckCircle2 size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-neutral-900">Completed</p>
-                <p className="text-xs text-green-600 font-medium mt-0.5">Successfully delivered</p>
+                <p className="text-sm font-bold text-neutral-900">{t("Analytics.Completed")}</p>
+                <p className="text-xs text-green-600 font-medium mt-0.5">{t("Analytics.Successfully delivered")}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

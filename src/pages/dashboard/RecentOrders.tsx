@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { MoreVertical, Eye } from 'lucide-react';
 
+////////////////
 // Mock data - replace with API fetch later
 const recentOrders = [
   { id: "#ORD-2847", customer: "Ahmad Hassan", product: "ASUS ROG Gaming Laptop", date: "May 18, 2026", status: "Completed", amount: "$1200" },
@@ -10,7 +12,8 @@ const recentOrders = [
   { id: "#ORD-2843", customer: "Yusuf Nasser", product: "Premium Headphones", date: "May 15, 2026", status: "Shipped", amount: "$299" },
 ];
 
-// Helper to get badge colors based on order status
+////////////////
+//  Helper to get badge colors based on order status
 const getStatusBadge = (status: string) => {
   switch (status) {
     case 'Completed': return 'bg-green-100 text-green-700';
@@ -22,6 +25,7 @@ const getStatusBadge = (status: string) => {
 };
 
 export default function RecentOrders() {
+const { t } = useTranslation('dashboard');
   const navigate = useNavigate();
 
   return (
@@ -30,15 +34,16 @@ export default function RecentOrders() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-xl font-bold text-neutral-900 mb-1">Recent Orders</h2>
-          <p className="text-neutral-500 text-sm">Latest customer orders</p>
+          <h2 className="text-xl font-bold text-neutral-900 mb-1">{t("RecentOrders.Recent Orders")}</h2>
+          <p className="text-neutral-500 text-sm">{t("RecentOrders.Latest customer orders")}</p>
         </div>
         
         <button 
           onClick={() => navigate('/Dashboard/orders')}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-secondary/20 text-neutral-700 font-medium hover:border-accent hover:text-accent transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl border 
+          border-secondary/20 text-neutral-700 font-medium hover:border-accent hover:text-accent transition-all"
         >
-          <Eye size={16} /> View All
+          <Eye size={16} />{t("RecentOrders.View All")} 
         </button>
       </div>
 
@@ -47,12 +52,12 @@ export default function RecentOrders() {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-gray-100">
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Order ID</th>
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Customer</th>
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Product</th>
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Date</th>
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Status</th>
-              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">Amount</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Order ID")}</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Customer")}</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Product")}</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Date")}</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Status")}</th>
+              <th className="py-4 px-4 font-semibold text-neutral-500 text-sm">{t("RecentOrders.Amount")}</th>
               <th className="py-4 px-4"></th>
             </tr>
           </thead>
